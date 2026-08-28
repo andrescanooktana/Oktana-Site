@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<!-- Optimized v03: normalized industry cards, semantic icons, responsive spacing, accessibility, and viewport-height behavior -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="Oktana Custom Industry Agent Library — Agentforce por industria." name="description"/>
+<title>Oktana · Agentforce Industry Agent Library</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app" id="app">
+<header class="topbar"><div class="official-logo-shell"><img alt="Oktana" class="official-logo" src="data:image/png;base64,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"/></div><div class="deck-meta">Agentforce · Industry Agent Library</div></header>
+<main class="track" id="track">
+<section class="slide cover active" data-title="Agentforce por Industria">
+<div class="slide-inner">
+<div class="cover-layout">
+<div class="cover-copy animate">
+<div class="eyebrow">Custom Industry Agent Library</div>
+<h1 style="margin-top:18px">Agentforce<br/><span class="grad">por Industria</span></h1>
+<p>Una librería de casos de uso especializados para llevar Agentforce más allá de los procesos horizontales y entrar directo al pain point de cada vertical.</p>
+<div class="cover-stats"><div class="stat"><b>32</b><span>Use Cases</span></div><div class="stat"><b>10</b><span>Industrias</span></div><div class="stat"><b>1</b><span>Library para Co-Sell</span></div></div>
+</div>
+<div aria-hidden="true" class="library-orbit animate">
+<div class="orbit-core"><div><b>32</b><span>Industry Agents</span></div></div>
+<div class="orbit-node">FS</div><div class="orbit-node">HL</div><div class="orbit-node">MF</div><div class="orbit-node">TC</div><div class="orbit-node">EU</div><div class="orbit-node">CG</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide" data-title="La oportunidad">
+<div class="slide-inner position-layout">
+<div class="position-head animate"><div class="eyebrow">Where Partners Win</div><h2 style="margin-top:14px">El Valor Está en el <span class="grad">Último Kilómetro</span></h2><p>Los templates estándar resuelven procesos comunes. La oportunidad está en los workflows, reglas e integraciones que hacen única a cada industria.</p></div>
+<div class="thesis-grid animate">
+<div class="card thesis"><span class="num">01 · SPECIALIZE</span><h3>Empieza con el pain point</h3><p>No con “queremos IA”, sino con un proceso concreto donde la industria ya siente fricción.</p></div>
+<div class="card thesis"><span class="num">02 · ORCHESTRATE</span><h3>Conecta contexto + acción</h3><p>Datos, políticas, sistemas externos y human-in-the-loop en una sola experiencia agentic.</p></div>
+<div class="card thesis"><span class="num">03 · SCALE</span><h3>Convierte el primer caso en plataforma</h3><p>Un agente demuestra valor; una librería abre nuevas conversaciones dentro de la misma cuenta.</p></div>
+</div>
+<div class="map-wrap animate">
+<div class="card library-metrics"><div class="metric-block"><b>32</b><span>casos especializados</span></div><div class="metric-block"><b>10</b><span>verticales prioritarias</span></div><div class="metric-block"><b>100%</b><span>orientados a pain points</span></div><div class="metric-block"><b>Custom</b><span>fuera del catálogo estándar revisado</span></div></div>
+<div class="card industry-map">
+<div class="map-chip"><b>Financial Services</b><span>4 agents</span></div><div class="map-chip"><b>Insurance</b><span>3 agents</span></div><div class="map-chip"><b>Manufacturing</b><span>4 agents</span></div><div class="map-chip"><b>Healthcare</b><span>4 agents</span></div><div class="map-chip"><b>Energy &amp; Utilities</b><span>4 agents</span></div><div class="map-chip"><b>Telecom</b><span>3 agents</span></div><div class="map-chip"><b>Retail / CG</b><span>3 agents</span></div><div class="map-chip"><b>Automotive</b><span>2 agents</span></div><div class="map-chip"><b>Public Sector</b><span>3 agents</span></div><div class="map-chip"><b>Education</b><span>2 agents</span></div>
+</div>
+</div>
+<div class="disclaimer">Librería curada a partir de la revisión realizada el 27 Ago 2026. Salesforce actualiza templates continuamente; validar disponibilidad por org/licencia antes de posicionar.</div>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="purple" data-title="Financial Services">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">FS</div>
+<div><div class="eyebrow">Industry Library · 01</div><h2>Financial Services</h2></div>
+</div>
+<div class="industry-kicker">Risk, compliance &amp; portfolio intelligence</div>
+</header>
+<div class="agent-grid count-4"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Compliance</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M8.5 11h5M11 8.5v5"></path></svg></div><div class="agent-copy"><h3>Financial Crime Investigation Agent</h3><p>Consolida KYC, transacciones y screening; construye la investigación y recomienda disposition.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Compliance</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><circle cx="8" cy="11" r="2"></circle><path d="M12 9h5M12 13h5M6 16h11"></path></svg></div><div class="agent-copy"><h3>KYC / Re-KYC Review Agent</h3><p>Detecta cambios de riesgo, documentos faltantes y prepara la revisión para aprobación humana.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Risk</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.7 8 7 10 4.3-2 7-5.4 7-10V6l-7-3Z"></path><path d="m9.5 12 1.7 1.7 3.7-4"></path></svg></div><div class="agent-copy"><h3>Credit Exception Review Agent</h3><p>Investiga excepciones de política, reúne evidencia y arma el decision packet para Credit.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">04</span><span class="value-chip">Risk</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 18V8M4 18h16"></path><path d="m7 15 4-4 3 2 5-6"></path><path d="M16 7h3v3"></path></svg></div><div class="agent-copy"><h3>Early Warning / Portfolio Risk Agent</h3><p>Prioriza cuentas con señales de deterioro y recomienda qué revisar y accionar hoy.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>4 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="cyan" data-title="Insurance">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">IN</div>
+<div><div class="eyebrow">Industry Library · 02</div><h2>Insurance</h2></div>
+</div>
+<div class="industry-kicker">Protect margin across claims and renewals</div>
+</header>
+<div class="agent-grid count-3"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Margin</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M12 3s6 6.3 6 11a6 6 0 1 1-12 0c0-4.7 6-11 6-11Z"></path><path d="M9.5 15.5c.7 1 1.6 1.5 2.8 1.5"></path></svg></div><div class="agent-copy"><h3>Claims Leakage Detection Agent</h3><p>Detecta overpayment, reservas anómalas, duplicados y señales que ameritan investigación.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Recovery</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"></path><path d="M4 4v4.5h4.5"></path><path d="M12 8v4l3 2"></path></svg></div><div class="agent-copy"><h3>Subrogation Opportunity Agent</h3><p>Identifica responsabilidad de terceros, recovery potential y crea el caso de recuperación.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Retention</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M7 7h8a4 4 0 0 1 4 4v1"></path><path d="m16 9 3 3 3-3"></path><path d="M17 17H9a4 4 0 0 1-4-4v-1"></path><path d="m8 15-3-3-3 3"></path></svg></div><div class="agent-copy"><h3>Policy Renewal Risk Agent</h3><p>Combina siniestralidad, exposición y servicio para recomendar la acción de renovación.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>3 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="mint" data-title="Manufacturing">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">MF</div>
+<div><div class="eyebrow">Industry Library · 03</div><h2>Manufacturing</h2></div>
+</div>
+<div class="industry-kicker">Anticipate disruption, quality issues and downtime</div>
+</header>
+<div class="agent-grid count-4"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Resilience</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M3 7h11v10H3z"></path><path d="M14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg></div><div class="agent-copy"><h3>Supplier Risk &amp; Disruption Agent</h3><p>Detecta proveedores en riesgo, productos impactados, inventory runway y mitigaciones.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Quality</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L4 17l3 3 5.7-5.7a4 4 0 0 0 5-5l-2.4 2.4-3-3L14.7 6.3Z"></path></svg></div><div class="agent-copy"><h3>Warranty Root Cause Agent</h3><p>Encuentra patrones de falla por lote, componente, planta o proveedor y abre investigación.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Quality</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M8.5 11h5M11 8.5v5"></path></svg></div><div class="agent-copy"><h3>Quality Investigation / CAPA Agent</h3><p>Reúne eventos, SOPs y antecedentes para proponer hipótesis y acciones correctivas.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">04</span><span class="value-chip">Operations</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M3 21V9l6 3V9l6 3V5h6v16H3Z"></path><path d="M7 17h2M12 17h2M17 17h2"></path></svg></div><div class="agent-copy"><h3>Production Exception Agent</h3><p>Evalúa excepciones de producción y sugiere planes alternos para pedidos afectados.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>4 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="violet" data-title="Healthcare &amp; Life Sciences">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">HL</div>
+<div><div class="eyebrow">Industry Library · 04</div><h2>Healthcare &amp; Life Sciences</h2></div>
+</div>
+<div class="industry-kicker">Remove admin friction. Protect patient and product safety.</div>
+</header>
+<div class="agent-grid count-4"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Efficiency</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5M9 12h6M9 16h6"></path></svg></div><div class="agent-copy"><h3>Prior Authorization Preparation Agent</h3><p>Compila evidencia clínica, reglas del payer y documentación faltante para preparar la autorización.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Research</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2.5 2.5 0 0 0 2.2 4h9.6A2.5 2.5 0 0 0 19 17l-5-9V3"></path><path d="M8 15h8"></path></svg></div><div class="agent-copy"><h3>Clinical Trial Patient Matching Agent</h3><p>Compara criterios de inclusión/exclusión con perfiles de pacientes para revisión clínica.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Safety</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M12 3 2.8 19h18.4L12 3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></div><div class="agent-copy"><h3>Adverse Event Intake &amp; Triage Agent</h3><p>Extrae producto, evento, severidad y fechas; identifica faltantes y escala casos críticos.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">04</span><span class="value-chip">Medical Affairs</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M9 4h6v5h5v6h-5v5H9v-5H4V9h5V4Z"></path></svg></div><div class="agent-copy"><h3>Medical Information Response Agent</h3><p>Prepara respuestas científicas basadas en contenido aprobado y escala consultas sensibles.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>4 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="amber" data-title="Energy &amp; Utilities">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">EU</div>
+<div><div class="eyebrow">Industry Library · 05</div><h2>Energy &amp; Utilities</h2></div>
+</div>
+<div class="industry-kicker">Explain, prioritize and restore with context</div>
+</header>
+<div class="agent-grid count-4"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">CX</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M8.5 11h5M11 8.5v5"></path></svg></div><div class="agent-copy"><h3>High-Bill Investigation Agent</h3><p>Explica incrementos de factura correlacionando consumo, tarifa, clima, medidor y cambios de servicio.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Reliability</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z"></path></svg></div><div class="agent-copy"><h3>Outage Impact &amp; Customer Communication Agent</h3><p>Identifica clientes críticos afectados, prioriza atención y prepara comunicaciones proactivas.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Loss Prevention</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 12 16 8M7 16h10"></path></svg></div><div class="agent-copy"><h3>Energy Theft / Meter Anomaly Agent</h3><p>Analiza patrones de consumo y eventos del medidor para preparar investigaciones de campo.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">04</span><span class="value-chip">Growth</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="18" cy="6" r="3"></circle><path d="M3 12h12l2 8H5l-2-8Z"></path><path d="m6 12 1 8M12 12l-1 8M4 16h12"></path></svg></div><div class="agent-copy"><h3>Renewable Interconnection Agent</h3><p>Valida solicitudes solar/DER, identifica faltantes y coordina los próximos pasos del proceso.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>4 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="blue" data-title="Communications / Telecom">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">TC</div>
+<div><div class="eyebrow">Industry Library · 06</div><h2>Communications / Telecom</h2></div>
+</div>
+<div class="industry-kicker">Protect revenue before churn or SLA failure</div>
+</header>
+<div class="agent-grid count-3"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Revenue</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 7h10M4 12h7M4 17h4"></path><path d="m15 15 3 3 3-3M18 18V8"></path></svg></div><div class="agent-copy"><h3>Churn Intervention Agent</h3><p>Explica el riesgo de churn y selecciona la mejor acción de retención según contexto y elegibilidad.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Service</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="19" cy="18" r="2"></circle><path d="m7 11 10-4M7 13l10 4"></path></svg></div><div class="agent-copy"><h3>Network Incident Customer Impact Agent</h3><p>Relaciona incidentes de red con clientes, SLAs y comunicaciones necesarias.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Revenue</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path><path d="M8 3h8"></path></svg></div><div class="agent-copy"><h3>Enterprise Contract SLA Risk Agent</h3><p>Detecta cuentas B2B próximas a incumplimiento y recomienda intervención antes del breach.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>3 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="pink" data-title="Retail &amp; Consumer Goods">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">CG</div>
+<div><div class="eyebrow">Industry Library · 07</div><h2>Retail &amp; Consumer Goods</h2></div>
+</div>
+<div class="industry-kicker">Protect trade spend, execution and customer trust</div>
+</header>
+<div class="agent-grid count-3"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Execution</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 8h16v12H4z"></path><path d="M3 8 7 3h10l4 5"></path><path d="M9 12h6"></path></svg></div><div class="agent-copy"><h3>Promotion Compliance Agent</h3><p>Compara acuerdos, POS, visitas y evidencia para detectar promociones mal ejecutadas.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Margin</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><circle cx="12" cy="12" r="3"></circle><path d="M7 9H6v1M17 15h1v-1"></path></svg></div><div class="agent-copy"><h3>Trade Spend Leakage Agent</h3><p>Identifica deductions, claims y descuentos inconsistentes para priorizar recuperación de margen.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Risk</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M5 7h10a5 5 0 0 1 0 10H9"></path><path d="m8 4-3 3 3 3"></path><path d="m12 14-3 3 3 3"></path></svg></div><div class="agent-copy"><h3>Product Recall Response Agent</h3><p>Localiza lotes, clientes, inventario y envíos para orquestar notificación, devolución y seguimiento.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>3 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="orange" data-title="Automotive">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">AU</div>
+<div><div class="eyebrow">Industry Library · 08</div><h2>Automotive</h2></div>
+</div>
+<div class="industry-kicker">Intervene before customer or legal exposure grows</div>
+</header>
+<div class="agent-grid count-2"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Risk</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="m5 16-1-3 2-5h12l2 5-1 3"></path><path d="M4 16h16v3H4z"></path><circle cx="7" cy="16" r="1"></circle><circle cx="17" cy="16" r="1"></circle></svg></div><div class="agent-copy"><h3>Vehicle Buyback / Lemon Law Agent</h3><p>Evalúa historial de reparaciones, garantía y jurisdicción para recomendar reparación, goodwill o buyback review.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Performance</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 10h16v10H4z"></path><path d="m3 10 2-5h14l2 5"></path><path d="M8 14h8M8 18h3"></path></svg></div><div class="agent-copy"><h3>Dealer Performance Intervention Agent</h3><p>Combina ventas, CSI, inventario y servicio para generar un plan de intervención por dealer.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>2 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="teal" data-title="Public Sector">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">PS</div>
+<div><div class="eyebrow">Industry Library · 09</div><h2>Public Sector</h2></div>
+</div>
+<div class="industry-kicker">Make complex programs easier to administer</div>
+</header>
+<div class="agent-grid count-3"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Citizen Services</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M12 21s-7-4.3-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 11c0 5.7-7 10-7 10Z"></path><path d="M9 12h6M12 9v6"></path></svg></div><div class="agent-copy"><h3>Benefits Eligibility Review Agent</h3><p>Evalúa solicitud, hogar, ingresos, reglas y documentos para preparar una recomendación al case worker.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Compliance</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5-9-5Z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path><path d="M21 10v6"></path></svg></div><div class="agent-copy"><h3>Grant Compliance Monitoring Agent</h3><p>Monitorea hitos, desembolsos, reportes y gasto para identificar grantees en riesgo.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">03</span><span class="value-chip">Response</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"></path><path d="M12 1v2M12 21v2M1 12h2M21 12h2"></path></svg></div><div class="agent-copy"><h3>Emergency Resource Coordination Agent</h3><p>Prioriza incidentes y recomienda asignación de personal, shelters, vehículos y suministros.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>3 use cases</span></footer>
+</div>
+</section>
+<section class="slide industry-slide" data-accent="indigo" data-title="Education">
+<div class="slide-inner industry-layout">
+<header class="industry-head animate">
+<div class="industry-identity">
+<div class="industry-code">ED</div>
+<div><div class="eyebrow">Industry Library · 10</div><h2>Education</h2></div>
+</div>
+<div class="industry-kicker">Intervene earlier. Reduce administrative friction.</div>
+</header>
+<div class="agent-grid count-2"><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">01</span><span class="value-chip">Student Success</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5-9-5Z"></path><path d="M7 12v4c2.8 2 7.2 2 10 0v-4"></path><path d="M21 9v6"></path></svg></div><div class="agent-copy"><h3>Student Retention Intervention Agent</h3><p>Cruza señales académicas, financieras y de engagement para recomendar la mejor intervención.</p></div></div></article><article class="agent-card">
+<div class="agent-card-top"><span class="agent-index">02</span><span class="value-chip">Operations</span></div>
+
+
+<div class="agent-card-body"><div aria-hidden="true" class="use-case-icon"><svg viewbox="0 0 24 24"><path d="M4 5h10v6H4zM10 13h10v6H10z"></path><path d="m15 7 3 3-3 3M9 17l-3-3 3-3"></path></svg></div><div class="agent-copy"><h3>Transfer Credit Evaluation Agent</h3><p>Interpreta transcripts, equivalencias y políticas para proponer créditos y marcar revisión manual.</p></div></div></article></div>
+<footer class="slide-foot"><span>Custom Industry Agent Library</span><span>2 use cases</span></footer>
+</div>
+</section>
+<section class="slide" data-title="De Use Case a QuickStart">
+<div class="slide-inner final-layout">
+<div class="final-copy animate"><div class="eyebrow">From Library to Pipeline</div><h2 style="margin-top:16px">De Use Case a <span class="grad">QuickStart</span></h2><p>La librería no es un catálogo estático. Es una herramienta para entrar a la conversación con una hipótesis concreta, validar el pain point y convertirlo en una implementación de alcance controlado.</p><div class="steps"><div class="step"><b>01</b><span>Discover</span></div><div class="step"><b>02</b><span>Demo</span></div><div class="step"><b>03</b><span>QuickStart</span></div></div></div>
+<div class="card final-panel animate"><h3>Una conversación distinta para cada industria.</h3><div class="callout"><b>Pick the pain point.</b><p>Seleccionamos el proceso donde existe urgencia, fricción o impacto económico visible.</p></div><div class="callout"><b>Prove value fast.</b><p>Diseñamos el primer agente con scope preciso, datos claros y human-in-the-loop donde corresponda.</p></div><div class="callout"><b>Expand from evidence.</b><p>El primer resultado abre el roadmap hacia nuevos agentes y workflows dentro de la cuenta.</p></div><a class="cta" href="https://oktana.com/contact-us/" rel="noopener" target="_blank">Construyamos el próximo caso →</a></div>
+</div>
+</section>
+</main>
+<nav aria-label="Navegación de slides" class="nav-dots" id="navDots"></nav>
+<div class="hint">Scroll · ↑ ↓ · Page Up / Page Down · Home / End</div>
+</div>
+<script>
+(()=>{
+ const slides=[...document.querySelectorAll('.slide')], track=document.getElementById('track'), dots=document.getElementById('navDots');
+ let index=0, locked=false;
+ slides.forEach((s,i)=>{const b=document.createElement('button');b.className='nav-dot'+(i===0?' active':'');b.type='button';b.title=(i+1)+'. '+s.dataset.title;b.setAttribute('aria-label','Ir a slide '+(i+1)+': '+s.dataset.title);b.onclick=()=>go(i);dots.appendChild(b)});
+ const dotEls=[...dots.children];
+ function go(i){index=Math.max(0,Math.min(slides.length-1,i));track.style.transform=`translate3d(0,-${slides[index].offsetTop}px,0)`;slides.forEach((s,n)=>s.classList.toggle('active',n===index));dotEls.forEach((d,n)=>d.classList.toggle('active',n===index));}
+ function next(delta){if(locked)return;locked=true;go(index+delta);setTimeout(()=>locked=false,700)}
+ window.addEventListener('wheel',e=>{if(window.innerWidth<=720)return;if(Math.abs(e.deltaY)<16)return;e.preventDefault();next(e.deltaY>0?1:-1)},{passive:false});
+ window.addEventListener('keydown',e=>{if(window.innerWidth<=720)return; if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next(1)} else if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();next(-1)} else if(e.key==='Home'){e.preventDefault();go(0)} else if(e.key==='End'){e.preventDefault();go(slides.length-1)}});
+ let y=null; window.addEventListener('touchstart',e=>y=e.touches[0].clientY,{passive:true}); window.addEventListener('touchend',e=>{if(window.innerWidth<=720||y===null)return;const dy=y-e.changedTouches[0].clientY;if(Math.abs(dy)>50)next(dy>0?1:-1);y=null},{passive:true});
+ go(0);
+})();
+</script>
+</body>
+</html>
